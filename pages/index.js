@@ -42,36 +42,22 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
-          {estudiante.map(c => (
+          {estudiante.map(c => {
             console.log('Tipo:', typeof c.fecha_Nacimiento, '| Valor:', c.fecha_Nacimiento)
+
+            return (
             <tr key={c.id}>
               <td>{c.id}</td>
               <td>{c.nombres}</td>
               <td>{c.apellidos}</td>
               <td>{formatearFecha(c.fecha_Nacimiento)}</td>
-            </tr>
-          ))}
+            </tr>  
+            )
+          }
+           )}
         </tbody>
       </table>
     </main>
   )
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
