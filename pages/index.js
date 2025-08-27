@@ -26,7 +26,7 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
-          {clientes.map(c => (
+          {estudiantes.map(c => (
             <tr key={c.id}>
               <td>{c.id}</td>
               <td>{c.nombres}</td>
@@ -38,4 +38,5 @@ export default function Home() {
       </table>
     </main>
   )
+
 }
