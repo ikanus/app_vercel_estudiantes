@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+mport { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      const { data, error } = await supabase.from('estudiantes').select('*')
+      const { data, error } = await supabase.from('Estudiante').select('*')
       console.log('DATA:', data);
       console.log('ERROR:', error);
       if (error) console.error('Error:', error)
@@ -42,4 +42,5 @@ export default function Home() {
   )
 
 }
+
 
