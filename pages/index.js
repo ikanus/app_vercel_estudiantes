@@ -34,8 +34,7 @@ export default function Home() {
     fetchData()
   }, [])
 
-  return (
-    console.log('Renderizando tabla...')
+  return (    
     <main style={{ padding: '2rem' }}>
       <h1>Lista de Estudiantes</h1>
       <table border="1" cellPadding="8">
@@ -65,6 +64,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
