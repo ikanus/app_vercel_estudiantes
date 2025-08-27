@@ -5,10 +5,13 @@ function formatearFecha(fecha) {
   if (!fecha) return '—'
 
   // Asegura que tenga formato ISO completo
-  const iso = fecha.includes('Z') ? fecha : fecha + 'Z'
-  const f = new Date(iso)
+  const iso = fecha.includes('T') && !fecha.includes('Z') ? fecha + 'Z' : fecha
+  const timestamp = Date.parse(iso)
 
-  return isNaN(f) ? 'Fecha inválida' : f.toLocaleDateString()
+  if (isNaN(timestamp)) return 'Fecha inválida'
+
+  const f = new Date(timestamp)
+  return f.toLocaleDateString()
 }
 
 export default function Home() {
@@ -53,6 +56,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
