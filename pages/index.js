@@ -1,6 +1,16 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 
+function formatearFecha(fecha) {
+  if (!fecha) return '—'
+
+  // Asegura que tenga formato ISO completo
+  const iso = fecha.includes('Z') ? fecha : fecha + 'Z'
+  const f = new Date(iso)
+
+  return isNaN(f) ? 'Fecha inválida' : f.toLocaleDateString()
+}
+
 export default function Home() {
   const [estudiante, setEstudiantes] = useState([])
 
@@ -34,7 +44,7 @@ export default function Home() {
               <td>{c.id}</td>
               <td>{c.nombres}</td>
               <td>{c.apellidos}</td>
-              <td>{new Date(c.fecha_Nacimiento + 'Z').toLocaleDateString()}</td>
+              <td>{formatearFecha(c.fecha_Nacimiento)}</td>
             </tr>
           ))}
         </tbody>
@@ -43,6 +53,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
