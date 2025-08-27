@@ -9,6 +9,7 @@ export default function Home() {
       const { data, error } = await supabase.from('estudiante').select('*')
       console.log('DATA:', data);
       console.log('ERROR:', error);
+      console.log('VERSION:', 1);
       if (error) console.error('Error:', error)
       else setEstudiantes(data)
     }
@@ -42,6 +43,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
