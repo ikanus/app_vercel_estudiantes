@@ -37,7 +37,7 @@ export default function Home() {
 
   return (    
     <main style={{ padding: '2rem' }}>
-      <h1><b>Lista de Estudiantes<b></h1>
+      <h1><b>Lista de Estudiantes</b></h1>
       <table border="1" cellPadding="8">
         <thead>
           <tr>
@@ -66,4 +66,5 @@ export default function Home() {
   )
 
 }
+
 
