@@ -2,7 +2,7 @@ mport { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabase'
 
 export default function Home() {
-  const [estudiantes, setEstudiantes] = useState([])
+  const [estudiante, setEstudiantes] = useState([])
 
   useEffect(() => {
     async function fetchData() {
@@ -28,7 +28,7 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
-          {estudiantes.map(c => (
+          {estudiante.map(c => (
             <tr key={c.id}>
               <td>{c.id}</td>
               <td>{c.nombres}</td>
@@ -42,6 +42,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
