@@ -14,6 +14,15 @@ function formatearFecha(fecha) {
   return f.toLocaleDateString()
 }
 
+function formatSupabaseDate(isoString) {
+      const date = new Date(isoString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    }
+
 export default function Home() {
   const [estudiante, setEstudiantes] = useState([])
 
@@ -51,7 +60,7 @@ export default function Home() {
               <td>{c.id}</td>
               <td>{c.nombres}</td>
               <td>{c.apellidos}</td>
-              <td>{c.fecha_Nacimiento}</td>
+              <td>{formatSupabaseDate(c.fecha_Nacimiento)}</td>
             </tr>  
             )
           }
@@ -62,5 +71,6 @@ export default function Home() {
   )
 
 }
+
 
 
