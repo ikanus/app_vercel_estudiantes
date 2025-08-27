@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { format } from 'date-fns';
 import { supabase } from '../lib/supabase'
 
 function formatearFecha(fecha) {
@@ -14,13 +15,8 @@ function formatearFecha(fecha) {
   return f.toLocaleDateString()
 }
 
-function formatSupabaseDate(isoString) {
-      const date = new Date(isoString);
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      });
+function formatSupabaseDateWithFns(isoString) {
+      return format(new Date(isoString), 'MMMM d, yyyy');
     }
 
 export default function Home() {
@@ -60,7 +56,7 @@ export default function Home() {
               <td>{c.id}</td>
               <td>{c.nombres}</td>
               <td>{c.apellidos}</td>
-              <td>{formatSupabaseDate(c.fecha_Nacimiento)}</td>
+              <td>{formatSupabaseDateWithFns(c.fecha_Nacimiento)}</td>
             </tr>  
             )
           }
@@ -71,6 +67,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
