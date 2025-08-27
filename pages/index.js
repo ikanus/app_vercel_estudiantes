@@ -49,8 +49,6 @@ export default function Home() {
         </thead>
         <tbody>
           {estudiante.map(c => {
-            console.log('Tipo:', typeof c.fecha_Nacimiento, '| Valor:', c.fecha_Nacimiento)
-
             return (
             <tr key={c.id}>
               <td>{c.id}</td>
@@ -67,6 +65,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
