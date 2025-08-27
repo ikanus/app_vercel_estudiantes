@@ -29,14 +29,12 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
-          {estudiante.map(c => (
-
-            console.log('Valor recibido:', c.fecha_Nacimiento);
+          {estudiante.map(c => (            
             <tr key={c.id}>
               <td>{c.id}</td>
               <td>{c.nombres}</td>
               <td>{c.apellidos}</td>
-              <td>{new Date(String(c.fecha_Nacimiento)).toLocaleDateString()}</td>
+              <td>{new Date(String(c.fecha_Nacimiento + 'Z')).toLocaleDateString()}</td>
             </tr>
           ))}
         </tbody>
@@ -45,6 +43,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
