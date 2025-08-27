@@ -7,6 +7,8 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       const { data, error } = await supabase.from('estudiantes').select('*')
+      console.log('DATA:', data);
+      console.log('ERROR:', error);
       if (error) console.error('Error:', error)
       else setEstudiantes(data)
     }
@@ -40,3 +42,4 @@ export default function Home() {
   )
 
 }
+
