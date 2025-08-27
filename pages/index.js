@@ -30,6 +30,7 @@ export default function Home() {
   }, [])
 
   return (
+    console.log('Renderizando tabla...')
     <main style={{ padding: '2rem' }}>
       <h1>Lista de Estudiantes</h1>
       <table border="1" cellPadding="8">
@@ -61,3 +62,4 @@ export default function Home() {
   )
 
 }
+
