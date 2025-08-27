@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { format } from 'date-fns';
 import { supabase } from '../lib/supabase'
+import { format } from 'date-fns';
+
 
 function formatearFecha(fecha) {
   if (!fecha) return '—'
@@ -47,7 +48,8 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
-          {estudiante.map(c => {
+          {estudiante.map(c => {           
+
             return (
             <tr key={c.id}>
               <td>{c.id}</td>
@@ -64,9 +66,3 @@ export default function Home() {
   )
 
 }
-
-
-
-
-
-
