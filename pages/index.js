@@ -31,7 +31,7 @@ export default function Home() {
         <tbody>
           {estudiante.map(c => (
 
-            console.log('Valor recibido:', c.fecha_Nacimiento)
+            console.log('Valor recibido:', c.fecha_Nacimiento);
             <tr key={c.id}>
               <td>{c.id}</td>
               <td>{c.nombres}</td>
@@ -45,6 +45,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
