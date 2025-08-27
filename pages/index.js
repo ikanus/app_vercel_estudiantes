@@ -34,7 +34,7 @@ export default function Home() {
               <td>{c.id}</td>
               <td>{c.nombres}</td>
               <td>{c.apellidos}</td>
-              <td>{new Date(String(c.fecha_Nacimiento + 'Z')).toLocaleDateString()}</td>
+              <td>{new Date(c.fecha_Nacimiento + 'Z').toLocaleDateString()}</td>
             </tr>
           ))}
         </tbody>
@@ -43,6 +43,7 @@ export default function Home() {
   )
 
 }
+
 
 
 
