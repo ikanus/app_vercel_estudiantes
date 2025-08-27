@@ -51,7 +51,7 @@ export default function Home() {
               <td>{c.id}</td>
               <td>{c.nombres}</td>
               <td>{c.apellidos}</td>
-              <td>{formatearFecha(c.fecha_Nacimiento)}</td>
+              <td>{c.fecha_Nacimiento}</td>
             </tr>  
             )
           }
@@ -62,4 +62,5 @@ export default function Home() {
   )
 
 }
+
 
